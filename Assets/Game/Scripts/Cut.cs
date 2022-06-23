@@ -44,8 +44,8 @@ public class Cut : MonoBehaviour
 
     private void onWin()
     {
-        pC.drill.SetActive(false);
         pC.sparkle.SetActive(false);
+        pC.drill.SetActive(false);
     }
 
     private void closeSmoke()
@@ -75,6 +75,7 @@ public class Cut : MonoBehaviour
         InputManager.Instance.onTouchStart -= touchStart;
         PlayerController.onSmokeOpen -= openSmoke;
         PlayerController.onSmokeClose -= closeSmoke;
+        GameManager.onWinEvent -= onWin;
     }
     private void OnTriggerEnter(Collider other)
     {
